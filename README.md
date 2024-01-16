@@ -28,7 +28,8 @@ Step 2 - Your ansible is successfully installed on the master node. Now we have 
   - nano hosts (The sample of hosts file is included in my Github repository)
 
 Step 4 - To check whether my host file (according to the GitHub repo) is correct use the below command:
- ansible-inventory server -m ping -i inventory_file (/home/ubuntu/ansible/hosts) --private-key=ansible_ssh_private_key (~/.ssh/ansible_key)
+
+ - ansible-inventory server -m ping -i inventory_file (/home/ubuntu/ansible/hosts) --private-key=ansible_ssh_private_key (~/.ssh/ansible_key)
  () - for your reference
 
 YOU SHOULD SEE THAT THE RESULT IS SUCCESS AND OUTPUT IS 'ping':'pong'.
