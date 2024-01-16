@@ -5,15 +5,15 @@
 ################################
 
 Step 1 - To install Ansible on your machine, launch two EC2 instances one with "ansible-master" & "ansible-server1" and SSH into the "ansible-master" server by opening Command Prompt and using the below commands.
-ssh -i "private-key-path.pem" 'username'@'public-ip-address' #To login into the server
+- ssh -i "private-key-path.pem" 'username'@'public-ip-address' #To login into the server
 
 On successful logging in update the packages and install ansible:
 
-sudo apt update
-sudo apt install ansible 
+- sudo apt update
+- sudo apt install ansible 
 
 Upon successful installation of Ansible verify it using the: 
-ansible --version
+- ansible --version
 
 Step 2 - Your ansible is successfully installed on the master node. Now we have ssh into the other server, so for that do the below steps:
  - Open the private key file in your windows and copy the content of your private key file
@@ -43,7 +43,7 @@ YOU CAN CHECK THE PLAYBOOK FILES FOR YOUR REFERENCE
 
 Step 2 - After creating the playbook.yaml file enter the below command
 
-ansible-playbook 'file-name.yaml' -i inventory_file --private-key=ansible_ssh_private_key
+- ansible-playbook 'file-name.yaml' -i inventory_file --private-key=ansible_ssh_private_key
 
 This will do the task you have written inside your playbook file.
 
