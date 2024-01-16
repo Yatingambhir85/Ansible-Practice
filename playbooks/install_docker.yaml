@@ -1,0 +1,21 @@
+---
+- name: This playbook will install Docker
+  hosts: server
+  become: true
+  tasks:
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
+    - name: Add Docker GPT apt key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+    - name: Add docker repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+        state: present
+    - name: Install Docker
+      apt: 
+        name: docker-ce
+        state: latest    
+  

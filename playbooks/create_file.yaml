@@ -1,0 +1,9 @@
+---
+- name: This playbook will create a file
+  hosts: server
+  become: true
+  tasks:
+  - name: To create a file
+    file:
+      path: /home/ubuntu/testing_ansible.txt
+      state: touch
