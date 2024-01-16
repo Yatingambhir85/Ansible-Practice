@@ -29,6 +29,7 @@ Step 2 - Your ansible is successfully installed on the master node. Now we have 
 
 Step 4 - To check whether my host file (according to the GitHub repo) is correct use the below command:
  ansible-inventory server -m ping -i inventory_file (/home/ubuntu/ansible/hosts) --private-key=ansible_ssh_private_key (~/.ssh/ansible_key)
+ () - for your reference
 
 YOU SHOULD SEE THAT THE RESULT IS SUCCESS AND OUTPUT IS 'ping':'pong'.
 
@@ -42,7 +43,7 @@ YOU CAN CHECK THE PLAYBOOK FILES FOR YOUR REFERENCE
 
 Step 2 - After creating the playbook.yaml file enter the below command
 
-ansible-playbook 'file-name.yaml' -i /home/ubuntu/ansible/hosts --private-key=~/.ssh/ansible_key
+ansible-playbook 'file-name.yaml' -i inventory_file --private-key=ansible_ssh_private_key
 
 This will do the task you have written inside your playbook file.
 
