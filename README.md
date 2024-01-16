@@ -1,6 +1,8 @@
-#Author: Yatin Gambhir
-#Date: 16 January 2024
-#Topic: Ansible Setup
+#############################
+### Author: Yatin Gambhir
+### Date: 16 January 2024
+### Topic: Ansible Setup
+################################
 
 Step 1 - To install Ansible on your machine, launch two EC2 instances one with "ansible-master" & "ansible-server1" and SSH into the "ansible-master" server by opening Command Prompt and using the below commands.
 ssh -i "private-key-path.pem" 'username'@'public-ip-address' #To login into the server
@@ -14,16 +16,16 @@ Upon successful installation of Ansible verify it using the:
 ansible --version
 
 Step 2 - Your ansible is successfully installed on the master node. Now we have ssh into the other server, so for that do the below steps:
- -- Open the private key file in your windows and copy the content of your private key file
- -- Now in the instance do "cd  ~/.ssh" where your private key file will be stored
- -- Create a new file using "nano ansible_key" and copy the content of the private key and save the file
- -- Give the permissions to the "~/.ssh" folder and the "ansible_key" file using "chmod 700 ~/.ssh" & "chmod 600 ~/.ssh/ansible_key"
- -- Now move to the home directory using "cd" command and try to login into the target server using "ssh -i ~/.ssh/ansible_key 'username'@'public_ip'". You will see that you are connected with the target server.
- -- Logout from the target server to go to the master server
+ - Open the private key file in your windows and copy the content of your private key file
+ - Now in the instance do "cd  ~/.ssh" where your private key file will be stored
+ - Create a new file using "nano ansible_key" and copy the content of the private key and save the file
+ - Give the permissions to the "~/.ssh" folder and the "ansible_key" file using "chmod 700 ~/.ssh" & "chmod 600 ~/.ssh/ansible_key"
+ - Now move to the home directory using "cd" command and try to login into the target server using "ssh -i ~/.ssh/ansible_key 'username'@'public_ip'". You will see that you are connected with the target server.
+ - Logout from the target server to go to the master server
 
  Step 3 - Now we will use the Ansible to test the connection. Follow the below steps and create an inventory file that includes all the target servers.
-  -- mkdir ansible
-  -- nano hosts (The sample of hosts file is included in my Github repository)
+  - mkdir ansible
+  - nano hosts (The sample of hosts file is included in my Github repository)
 
 Step 4 - To check whether my hosts file (according to the github repo) is correct use the below command:
  ansible-inventory server -m ping -i /home/ubuntu/ansible/hosts --private-key=~/.ssh/ansible_key
