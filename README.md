@@ -16,8 +16,8 @@ Upon successful installation of Ansible verify it using the:
 - ansible --version
 
 Step 2 - Your ansible is successfully installed on the master node. Now we have ssh into the other server, so for that do the below steps:
- - Open the private key file in your windows and copy the content of your private key file
- - Now in the instance do "cd  ~/.ssh" where your private key file will be stored
+ - Open the private key file in your Master Node and copy the content of your private key file
+ - Now in the Agent node do "cd  ~/.ssh" where your private key file will be stored
  - Create a new file using "nano ansible_key" and copy the content of the private key and save the file
  - Give the permissions to the "~/.ssh" folder and the "ansible_key" file using "chmod 700 ~/.ssh" & "chmod 600 ~/.ssh/ansible_key"
  - Now move to the home directory using the "cd" command and try to login into the target server using "ssh -i ~/.ssh/ansible_key 'username'@'public_ip'". You will see that you are connected with the target server.
